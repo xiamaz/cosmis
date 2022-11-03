@@ -204,7 +204,8 @@ def get_dataset_headers():
         'cs_syn_poss', 'cs_mis_poss', 'cs_gc_content', 'cs_syn_prob',
         'cs_syn_obs', 'cs_mis_prob', 'cs_mis_obs', 'mis_pmt_mean', 'mis_pmt_sd',
         'mis_p_value', 'syn_pmt_mean', 'syn_pmt_sd', 'syn_p_value',
-        'enst_syn_obs', 'enst_mis_obs', 'enst_syn_exp', 'enst_mis_exp', 'uniprot_length'
+        'enst_syn_obs', 'enst_mis_obs', 'enst_syn_exp', 'enst_mis_exp', 'uniprot_length',
+        'cosmis'
     ]
     return header
 
@@ -479,7 +480,8 @@ def main():
                 enst_mp_counts[right_enst][4],
                 total_exp_syn_counts,
                 total_exp_mis_counts,
-                len(pep_seq)
+                len(pep_seq),
+                '{:.3f}'.format((total_missense_obs - mis_pmt_mean) / mis_pmt_sd)
             ]
         )
 
